@@ -5,7 +5,7 @@ function SearchBar(){
   const [input, setInput] = useState('');
 
   return (
-    <div>
+    <div className="SearchBar">
       <label>Search</label>
       <input value = {input} type='text' placeholder="Enter a song, album, or artist" onChange={e => setInput(e.target.value)} />
       <button>SEARCH</button>

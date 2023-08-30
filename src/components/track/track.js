@@ -7,9 +7,8 @@ function Track(props){
         <h3 className={styles.h3}>{props.name}</h3>
         <p>{props.artist}</p>
         <p>{props.album}</p>
-        <p>{props.id}</p>
+        <p>{props.key}</p>
       </div>
-      <button>Add Or Remove Track Goes Herey</button>
     </div>
   )
 }

@@ -13,6 +13,14 @@ function App() {
   ]
 
   const [tracks, setTracks] = useState(track);
+  const [playlistName, setPlaylistName] = useState("testing name");
+  const [playlistTracks, setPlaylistTracks] = useState([
+    {id: 2, name: "lil"},
+    {id: 3, name: "figaro"}
+  ]);
+  const [searchResults, setSearchResults] = useState([
+    {id: 4, name: "searchResultsName", artist: "searchResultsArtist", album: "searchResultsAlbum"}
+  ]);
 
   function addTrack(track){
     if (!tracks.some(t => t.id === track.id)){
@@ -29,8 +37,8 @@ function App() {
   <div className="App">
       <h1>Jammming</h1>
       <SearchBar />
-      <SearchResults />
-      <Playlist />
+      <SearchResults searchResults={searchResults}/>
+      <Playlist playlistName={playlistName} playlistTracks={playlistTracks}/>
       <TrackList tracks={tracks}/>
       <a
         className="App-link"
