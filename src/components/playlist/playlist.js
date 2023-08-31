@@ -14,7 +14,7 @@ function Playlist(props){
         onRemove={props.onRemove}
         isRemoval={true}
       />
-      <button>Save to Spotify</button>
+      <button onClick={props.savePlaylist}>Save to Spotify</button>
     </div>
   )
 }
