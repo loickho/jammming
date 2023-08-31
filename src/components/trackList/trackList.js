@@ -11,6 +11,8 @@ function TrackList(props){
           artist={track.artist}
           album={track.album}
           onAdd={props.onAdd}
+          onRemove={props.onRemove}
+          isRemoval={props.isRemoval}
           track={track}
         />
       ))}

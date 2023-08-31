@@ -28,19 +28,19 @@ function App() {
     } else {
       console.log("Track already in playlist")
     }
-  }
+  };
 
-  // function removeTrack(track){
-  //   const newTracks = tracks.filter(t => t.id !== track.id);
-  //   setTracks(newTracks);
-  // }
+  function removeTrack(track){
+    const newTracks = playlistTracks.filter(t => t.id !== track.id);
+    setPlaylistTracks(newTracks);
+  };
 
   return (
   <div className="App">
       <h1>Jammming</h1>
       <SearchBar />
       <SearchResults searchResults={searchResults} onAdd={addTrack}/>
-      <Playlist playlistName={playlistName} playlistTracks={playlistTracks}/>
+      <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack}/>
       <a
         className="App-link"
         href="https://reactjs.org"
