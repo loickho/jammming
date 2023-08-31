@@ -40,7 +40,7 @@ function App() {
       <h1>Jammming</h1>
       <SearchBar />
       <SearchResults searchResults={searchResults} onAdd={addTrack}/>
-      <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack}/>
+      <Playlist playlistName={playlistName} setPlaylistName={setPlaylistName} playlistTracks={playlistTracks} onRemove={removeTrack}/>
       <a
         className="App-link"
         href="https://reactjs.org"
