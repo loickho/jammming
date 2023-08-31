@@ -6,40 +6,41 @@ import Playlist from './components/playlist/playlist';
 import TrackList from './components/trackList/trackList';
 
 function App() {
-  const track = [
-    { id: 1, name: "asdf", artist: "Rosalia", album: "cojones"},
-    { id: 2, name: "lil", artist: "lil john", album: "jonjon"},
-    { id: 3, name: "figaro", artist: "mozart", album: "le nozze di figaro"}
-  ]
+  // const track = [
+  //   { id: 1, name: "BIZCOCHITO", artist: "Rosalia", album: "Motomami"},
+  //   { id: 2, name: "lil", artist: "lil john", album: "jonjon"},
+  //   { id: 3, name: "figaro", artist: "mozart", album: "le nozze di figaro"}
+  // ]
 
-  const [tracks, setTracks] = useState(track);
-  const [playlistName, setPlaylistName] = useState("testing name");
+  // const [tracks, setTracks] = useState(track);
+  const [playlistName, setPlaylistName] = useState("hard beatz (playlist name)");
   const [playlistTracks, setPlaylistTracks] = useState([
-    {id: 2, name: "lil"},
-    {id: 3, name: "figaro"}
+    { id: 1, name: "BIZCOCHITO", artist: "Rosalia", album: "Motomami"}
   ]);
   const [searchResults, setSearchResults] = useState([
-    {id: 4, name: "searchResultsName", artist: "searchResultsArtist", album: "searchResultsAlbum"}
+    {id: 4, name: "searchResultsName1", artist: "searchResultsArtist1", album: "searchResultsAlbum1"},
+    {id: 5, name: "searchResultsName2", artist: "searchResultsArtist2", album: "searchResultsAlbum2"}
   ]);
 
   function addTrack(track){
-    if (!tracks.some(t => t.id === track.id)){
-      setTracks([...tracks, track]);
+    if (!playlistTracks.some(t => t.id === track.id)){
+      setPlaylistTracks([...playlistTracks, track]);
+    } else {
+      console.log("Track already in playlist")
     }
   }
 
-  function removeTrack(track){
-    const newTracks = tracks.filter(t => t.id !== track.id);
-    setTracks(newTracks);
-  }
+  // function removeTrack(track){
+  //   const newTracks = tracks.filter(t => t.id !== track.id);
+  //   setTracks(newTracks);
+  // }
 
   return (
   <div className="App">
       <h1>Jammming</h1>
       <SearchBar />
-      <SearchResults searchResults={searchResults}/>
+      <SearchResults searchResults={searchResults} onAdd={addTrack}/>
       <Playlist playlistName={playlistName} playlistTracks={playlistTracks}/>
-      <TrackList tracks={tracks}/>
       <a
         className="App-link"
         href="https://reactjs.org"

@@ -1,11 +1,18 @@
 import styles from './trackList.css';
 import Track from '../track/track'
 
-function TrackList(props, removeTrack){
+function TrackList(props){
   return (
-    <div class='TrackList'>
+    <div className='TrackList'>
       {props.tracks.map(track => (
-        <Track key={track.id} name={track.name} artist={track.artist} album={track.album} removeTrack = {removeTrack} />
+        <Track
+          key={track.id}
+          name={track.name}
+          artist={track.artist}
+          album={track.album}
+          onAdd={props.onAdd}
+          track={track}
+        />
       ))}
     </div>
   );
