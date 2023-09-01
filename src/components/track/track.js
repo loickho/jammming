@@ -15,7 +15,7 @@ function Track(props){
     <div className="Track">
       <div className="Track-info">
         <h3 className={styles.h3}>{props.name}</h3>
-        <p>{props.artist} || {props.album}</p>
+        <p>{props.artist} || {props.album} </p>
         {
           props.isRemoval ? (
             <button onClick={removeTrack}>-</button>
